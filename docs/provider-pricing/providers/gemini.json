@@ -1,0 +1,739 @@
+{
+  "catalog_schema": "provider-pricing-v1",
+  "provider": "google_gemini",
+  "currency": "USD",
+  "retrieved_at": "2026-08-11T21:27:01+02:00",
+  "source_urls": ["https://ai.google.dev/gemini-api/docs/pricing"],
+  "units": {
+    "usd_per_mtok": "USD per 1,000,000 tokens",
+    "usd_per_mtok_hour": "USD per 1,000,000 cached tokens per hour",
+    "usd_per_1000_requests": "USD per 1,000 requests",
+    "usd_per_second": "USD per generated second",
+    "usd_per_image": "USD per generated image",
+    "usd_per_song": "USD per generated song"
+  },
+  "cost_formula": "sum(modality_input_tokens * selected_input_rate / 1000000) + (output_tokens_including_thinking * selected_output_rate / 1000000) + (cached_tokens * selected_cache_rate / 1000000) + (cached_token_hours * cache_storage_rate / 1000000) + tool_charges + generated_media_charges",
+  "tiers": ["standard", "batch", "flex", "priority"],
+  "model_groups": [
+    {
+      "ids": ["gemini-3.6-flash"],
+      "status": "current",
+      "modes": {
+        "standard": {
+          "input": 1.5,
+          "output_including_thinking": 7.5,
+          "cache_read": 0.15,
+          "cache_storage": 1
+        },
+        "batch": {
+          "input": 0.75,
+          "output_including_thinking": 3.75,
+          "cache_read": 0.075,
+          "cache_storage": 1
+        },
+        "flex": {
+          "input": 0.75,
+          "output_including_thinking": 3.75,
+          "cache_read": 0.075,
+          "cache_storage": 1
+        },
+        "priority": {
+          "input": 2.7,
+          "output_including_thinking": 13.5,
+          "cache_read": 0.27,
+          "cache_storage": 1
+        }
+      },
+      "grounding_profile": "gemini_3"
+    },
+    {
+      "ids": ["gemini-3.5-flash"],
+      "status": "current",
+      "modes": {
+        "standard": {
+          "input": 1.5,
+          "output_including_thinking": 9,
+          "cache_read": 0.15,
+          "cache_storage": 1
+        },
+        "batch": {
+          "input": 0.75,
+          "output_including_thinking": 4.5,
+          "cache_read": 0.075,
+          "cache_storage": 1
+        },
+        "flex": {
+          "input": 0.75,
+          "output_including_thinking": 4.5,
+          "cache_read": 0.08,
+          "cache_storage": 1
+        },
+        "priority": {
+          "input": 2.7,
+          "output_including_thinking": 16.2,
+          "cache_read": 0.27,
+          "cache_storage": 1
+        }
+      },
+      "grounding_profile": "gemini_3"
+    },
+    {
+      "ids": ["gemini-3.5-live-translate-preview"],
+      "status": "preview",
+      "modes": {
+        "standard": {
+          "audio_input": 3.5,
+          "audio_output": 21,
+          "effective_audio_input_usd_per_minute": 0.0053,
+          "effective_audio_output_usd_per_minute": 0.0315,
+          "effective_total_usd_per_minute": 0.0368
+        }
+      }
+    },
+    {
+      "ids": ["gemini-3.5-flash-lite"],
+      "status": "current",
+      "modes": {
+        "standard": {
+          "input_all_modalities": 0.3,
+          "output_including_thinking": 2.5,
+          "cache_read": 0.03,
+          "cache_storage": 1
+        },
+        "batch": {
+          "input_all_modalities": 0.15,
+          "output_including_thinking": 1.25,
+          "cache_read": 0.02,
+          "cache_storage": 1
+        },
+        "flex": {
+          "input_all_modalities": 0.15,
+          "output_including_thinking": 1.25,
+          "cache_read": 0.02,
+          "cache_storage": 1
+        },
+        "priority": {
+          "input_all_modalities": 0.54,
+          "output_including_thinking": 4.5,
+          "cache_read": 0.05,
+          "cache_storage": 1
+        }
+      },
+      "grounding_profile": "gemini_3"
+    },
+    {
+      "ids": ["gemini-3.1-flash-lite"],
+      "status": "current",
+      "modes": {
+        "standard": {
+          "input_text_image_video": 0.25,
+          "input_audio": 0.5,
+          "output_including_thinking": 1.5,
+          "cache_read_text_image_video": 0.025,
+          "cache_read_audio": 0.05,
+          "cache_storage": 1
+        },
+        "batch": {
+          "input_text_image_video": 0.125,
+          "input_audio": 0.25,
+          "output_including_thinking": 0.75,
+          "cache_read_text_image_video": 0.0125,
+          "cache_read_audio": 0.025,
+          "cache_storage": 0.5
+        },
+        "flex": {
+          "input_text_image_video": 0.125,
+          "input_audio": 0.25,
+          "output_including_thinking": 0.75,
+          "cache_read_text_image_video": 0.0125,
+          "cache_read_audio": 0.025,
+          "cache_storage": 0.5
+        },
+        "priority": {
+          "input_text_image_video": 0.45,
+          "input_audio": 0.9,
+          "output_including_thinking": 2.7,
+          "cache_read_text_image_video": 0.045,
+          "cache_read_audio": 0.09,
+          "cache_storage": 1.8
+        }
+      },
+      "grounding_profile": "gemini_3"
+    },
+    {
+      "ids": ["gemini-omni-flash-preview"],
+      "status": "preview",
+      "modes": {
+        "standard": {
+          "input_all_modalities": 1.5,
+          "text_output_including_thinking": 9,
+          "video_output": 17.5,
+          "effective_720p_video_usd_per_second": 0.1
+        }
+      }
+    },
+    {
+      "ids": ["gemini-3.1-pro-preview", "gemini-3.1-pro-preview-customtools"],
+      "status": "preview",
+      "modes": {
+        "standard": {
+          "input_at_or_under_200k": 2,
+          "input_over_200k": 4,
+          "output_at_or_under_200k": 12,
+          "output_over_200k": 18,
+          "cache_read_at_or_under_200k": 0.2,
+          "cache_read_over_200k": 0.4,
+          "cache_storage": 4.5
+        },
+        "batch": {
+          "input_at_or_under_200k": 1,
+          "input_over_200k": 2,
+          "output_at_or_under_200k": 6,
+          "output_over_200k": 9,
+          "cache_read_at_or_under_200k": 0.2,
+          "cache_read_over_200k": 0.4,
+          "cache_storage": 4.5
+        },
+        "flex": {
+          "input_at_or_under_200k": 1,
+          "input_over_200k": 2,
+          "output_at_or_under_200k": 6,
+          "output_over_200k": 9,
+          "cache_read_at_or_under_200k": 0.2,
+          "cache_read_over_200k": 0.4,
+          "cache_storage": 4.5
+        },
+        "priority": {
+          "input_at_or_under_200k": 3.6,
+          "input_over_200k": 7.2,
+          "output_at_or_under_200k": 21.6,
+          "output_over_200k": 32.4,
+          "cache_read_at_or_under_200k": 0.36,
+          "cache_read_over_200k": 0.72,
+          "cache_storage": 8.1
+        }
+      },
+      "grounding_profile": "gemini_3"
+    },
+    {
+      "ids": ["gemini-3.1-flash-live-preview"],
+      "status": "preview",
+      "modes": {
+        "standard": {
+          "text_input": 0.75,
+          "audio_input": 3,
+          "effective_audio_input_usd_per_minute": 0.005,
+          "image_video_input": 1,
+          "effective_image_video_input_usd_per_minute": 0.002,
+          "text_output": 4.5,
+          "audio_output": 12,
+          "effective_audio_output_usd_per_minute": 0.018
+        }
+      },
+      "grounding_profile": "gemini_3"
+    },
+    {
+      "ids": ["gemini-3.1-flash-image"],
+      "status": "current",
+      "modes": {
+        "standard": {
+          "text_image_input": 0.5,
+          "text_output_including_thinking": 3,
+          "image_output": 60,
+          "image_0_5k_usd_each": 0.045,
+          "image_1k_usd_each": 0.067,
+          "image_2k_usd_each": 0.101,
+          "image_4k_usd_each": 0.151
+        },
+        "batch": {
+          "text_image_input": 0.25,
+          "text_output_including_thinking": 1.5,
+          "image_output": 30,
+          "image_0_5k_usd_each": 0.022,
+          "image_1k_usd_each": 0.034,
+          "image_2k_usd_each": 0.05,
+          "image_4k_usd_each": 0.076
+        }
+      },
+      "grounding_profile": "gemini_3"
+    },
+    {
+      "ids": ["gemini-3.1-flash-lite-image"],
+      "status": "current",
+      "modes": {
+        "standard": {
+          "text_image_video_input": 0.25,
+          "text_output_including_thinking": 1.5,
+          "image_output": 30,
+          "image_1k_usd_each": 0.0336
+        },
+        "batch": {
+          "text_image_video_input": 0.125,
+          "text_output_including_thinking": 0.75,
+          "image_output": 15,
+          "image_1k_usd_each": 0.0168
+        }
+      }
+    },
+    {
+      "ids": ["gemini-3.1-flash-tts-preview"],
+      "status": "preview",
+      "modes": {
+        "standard": { "text_input": 1, "audio_output": 20 },
+        "batch": { "text_input": 0.5, "audio_output": 10 }
+      },
+      "billing_notes": ["Audio output is 25 tokens per second."]
+    },
+    {
+      "ids": ["gemini-3-flash-preview"],
+      "status": "preview",
+      "modes": {
+        "standard": {
+          "input_text_image_video": 0.5,
+          "input_audio": 1,
+          "output_including_thinking": 3,
+          "cache_read_text_image_video": 0.05,
+          "cache_read_audio": 0.1,
+          "cache_storage": 1
+        },
+        "batch": {
+          "input_text_image_video": 0.25,
+          "input_audio": 0.5,
+          "output_including_thinking": 1.5,
+          "cache_read_text_image_video": 0.05,
+          "cache_read_audio": 0.1,
+          "cache_storage": 1
+        },
+        "flex": {
+          "input_text_image_video": 0.25,
+          "input_audio": 0.5,
+          "output_including_thinking": 1.5,
+          "cache_read_text_image_video": 0.05,
+          "cache_read_audio": 0.1,
+          "cache_storage": 1
+        },
+        "priority": {
+          "input_text_image_video": 0.9,
+          "input_audio": 1.8,
+          "output_including_thinking": 5.4,
+          "cache_read_text_image_video": 0.09,
+          "cache_read_audio": 0.18,
+          "cache_storage": 1.8
+        }
+      },
+      "grounding_profile": "gemini_3"
+    },
+    {
+      "ids": ["gemini-3-pro-image"],
+      "status": "current",
+      "modes": {
+        "standard": {
+          "text_image_input": 2,
+          "image_input_usd_each": 0.0011,
+          "text_output_including_thinking": 12,
+          "image_output": 120,
+          "image_1k_2k_usd_each": 0.134,
+          "image_4k_usd_each": 0.24
+        },
+        "batch": {
+          "text_input": 1,
+          "image_input_usd_each": 0.0006,
+          "text_output_including_thinking": 6,
+          "image_1k_2k_usd_each": 0.067,
+          "image_4k_usd_each": 0.12
+        },
+        "flex": {
+          "text_input": 1,
+          "image_input_usd_each": 0.0006,
+          "text_output_including_thinking": 6,
+          "image_1k_2k_usd_each": 0.067,
+          "image_4k_usd_each": 0.12
+        },
+        "priority": {
+          "text_image_input": 3.6,
+          "text_output_including_thinking": 21.6,
+          "image_output": 216
+        }
+      },
+      "grounding_profile": "gemini_3"
+    },
+    {
+      "ids": ["gemini-2.5-pro"],
+      "status": "current",
+      "modes": {
+        "standard": {
+          "input_at_or_under_200k": 1.25,
+          "input_over_200k": 2.5,
+          "output_at_or_under_200k": 10,
+          "output_over_200k": 15,
+          "cache_read_at_or_under_200k": 0.125,
+          "cache_read_over_200k": 0.25,
+          "cache_storage": 4.5
+        },
+        "batch": {
+          "input_at_or_under_200k": 0.625,
+          "input_over_200k": 1.25,
+          "output_at_or_under_200k": 5,
+          "output_over_200k": 7.5,
+          "cache_read_at_or_under_200k": 0.125,
+          "cache_read_over_200k": 0.25,
+          "cache_storage": 4.5
+        },
+        "flex": {
+          "input_at_or_under_200k": 0.625,
+          "input_over_200k": 1.25,
+          "output_at_or_under_200k": 5,
+          "output_over_200k": 7.5,
+          "cache_read_at_or_under_200k": 0.125,
+          "cache_read_over_200k": 0.25,
+          "cache_storage": 4.5
+        },
+        "priority": {
+          "input_at_or_under_200k": 2.25,
+          "input_over_200k": 4.5,
+          "output_at_or_under_200k": 18,
+          "output_over_200k": 27,
+          "cache_read_at_or_under_200k": 0.225,
+          "cache_read_over_200k": 0.45,
+          "cache_storage": 8.1
+        }
+      },
+      "grounding_profile": "gemini_2_5_pro"
+    },
+    {
+      "ids": ["gemini-2.5-flash"],
+      "status": "current",
+      "modes": {
+        "standard": {
+          "input_text_image_video": 0.3,
+          "input_audio": 1,
+          "output_including_thinking": 2.5,
+          "cache_read_text_image_video": 0.03,
+          "cache_read_audio": 0.1,
+          "cache_storage": 1
+        },
+        "batch": {
+          "input_text_image_video": 0.15,
+          "input_audio": 0.5,
+          "output_including_thinking": 1.25,
+          "cache_read_text_image_video": 0.03,
+          "cache_read_audio": 0.1,
+          "cache_storage": 1
+        },
+        "flex": {
+          "input_text_image_video": 0.15,
+          "input_audio": 0.5,
+          "output_including_thinking": 1.25,
+          "cache_read_text_image_video": 0.03,
+          "cache_read_audio": 0.1,
+          "cache_storage": 1
+        },
+        "priority": {
+          "input_text_image_video": 0.54,
+          "input_audio": 1.8,
+          "output_including_thinking": 4.5,
+          "cache_read_text_image_video": 0.054,
+          "cache_read_audio": 0.18,
+          "cache_storage": 1.8
+        }
+      },
+      "grounding_profile": "gemini_2_5_flash"
+    },
+    {
+      "ids": ["gemini-2.5-flash-lite", "gemini-2.5-flash-lite-preview-09-2025"],
+      "status": "current_and_preview",
+      "modes": {
+        "standard": {
+          "input_text_image_video": 0.1,
+          "input_audio": 0.3,
+          "output_including_thinking": 0.4,
+          "cache_read_text_image_video": 0.01,
+          "cache_read_audio": 0.03,
+          "cache_storage": 1
+        },
+        "batch": {
+          "input_text_image_video": 0.05,
+          "input_audio": 0.15,
+          "output_including_thinking": 0.2,
+          "cache_read_text_image_video": 0.01,
+          "cache_read_audio": 0.03,
+          "cache_storage": 1
+        },
+        "flex": {
+          "input_text_image_video": 0.05,
+          "input_audio": 0.15,
+          "output_including_thinking": 0.2,
+          "cache_read_text_image_video": 0.01,
+          "cache_read_audio": 0.03,
+          "cache_storage": 1
+        },
+        "priority": {
+          "input_text_image_video": 0.18,
+          "input_audio": 0.54,
+          "output_including_thinking": 0.72,
+          "cache_read_text_image_video": 0.018,
+          "cache_read_audio": 0.054,
+          "cache_storage": 1.8
+        }
+      },
+      "grounding_profile": "gemini_2_5_flash_lite"
+    },
+    {
+      "ids": ["gemini-2.5-flash-native-audio-preview-12-2025"],
+      "status": "preview",
+      "modes": {
+        "standard": {
+          "text_input": 0.5,
+          "audio_video_input": 3,
+          "text_output": 2,
+          "audio_output": 12
+        }
+      }
+    },
+    {
+      "ids": ["gemini-2.5-flash-image"],
+      "status": "preview",
+      "modes": {
+        "standard": { "text_image_input": 0.3, "image_output_usd_each": 0.039 },
+        "batch": { "text_image_input": 0.15, "image_output_usd_each": 0.0195 },
+        "flex": { "text_image_input": 0.15, "image_output_usd_each": 0.0195 },
+        "priority": { "text_image_input": 0.54, "image_output_usd_each": 0.0702 }
+      }
+    },
+    {
+      "ids": ["gemini-2.5-flash-preview-tts"],
+      "status": "preview",
+      "modes": {
+        "standard": { "text_input": 0.5, "audio_output": 10 },
+        "batch": { "text_input": 0.25, "audio_output": 5 }
+      }
+    },
+    {
+      "ids": ["gemini-2.5-pro-preview-tts"],
+      "status": "preview",
+      "modes": {
+        "standard": { "text_input": 1, "audio_output": 20 },
+        "batch": { "text_input": 0.5, "audio_output": 10 }
+      }
+    },
+    {
+      "ids": ["gemini-2.0-flash"],
+      "status": "deprecated_shut_down",
+      "modes": {
+        "standard": {
+          "input_text_image_video": 0.1,
+          "input_audio": 0.7,
+          "output": 0.4,
+          "cache_read_text_image_video": 0.025,
+          "cache_read_audio": 0.175,
+          "cache_storage": 1
+        },
+        "batch": {
+          "input_text_image_video": 0.05,
+          "input_audio": 0.35,
+          "output": 0.2,
+          "cache_read_text_image_video": 0.025,
+          "cache_read_audio": 0.175,
+          "cache_storage": 1
+        }
+      },
+      "shutdown_date": "2026-06-01"
+    },
+    {
+      "ids": ["gemini-2.0-flash-lite"],
+      "status": "deprecated_shut_down",
+      "modes": {
+        "standard": { "input": 0.075, "output": 0.3 },
+        "batch": { "input": 0.0375, "output": 0.15 }
+      },
+      "shutdown_date": "2026-06-01"
+    },
+    {
+      "ids": [
+        "imagen-4.0-fast-generate-001",
+        "imagen-4.0-generate-001",
+        "imagen-4.0-ultra-generate-001"
+      ],
+      "status": "deprecated",
+      "rates": {
+        "fast_usd_per_image": 0.02,
+        "standard_usd_per_image": 0.04,
+        "ultra_usd_per_image": 0.06
+      },
+      "shutdown_date": "2026-08-17"
+    },
+    {
+      "ids": [
+        "veo-3.1-generate-preview",
+        "veo-3.1-fast-generate-preview",
+        "veo-3.1-lite-generate-preview"
+      ],
+      "status": "preview",
+      "rates": {
+        "standard_audio_720p_1080p_usd_per_second": 0.4,
+        "standard_audio_4k_usd_per_second": 0.6,
+        "fast_audio_720p_usd_per_second": 0.1,
+        "fast_audio_1080p_usd_per_second": 0.12,
+        "fast_audio_4k_usd_per_second": 0.3,
+        "lite_audio_720p_usd_per_second": 0.05,
+        "lite_audio_1080p_usd_per_second": 0.08
+      }
+    },
+    {
+      "ids": ["veo-3.0-generate-001", "veo-3.0-fast-generate-001"],
+      "status": "deprecated_shut_down",
+      "rates": {
+        "standard_audio_usd_per_second": 0.4,
+        "fast_audio_720p_usd_per_second": 0.1,
+        "fast_audio_1080p_usd_per_second": 0.12,
+        "fast_audio_4k_usd_per_second": 0.3
+      },
+      "shutdown_date": "2026-06-30"
+    },
+    {
+      "ids": ["veo-2.0-generate-001"],
+      "status": "deprecated_shut_down",
+      "rates": { "video_usd_per_second": 0.35 },
+      "shutdown_date": "2026-06-30"
+    },
+    {
+      "ids": ["lyria-3-clip-preview", "lyria-3-pro-preview"],
+      "status": "preview",
+      "rates": { "clip_30_seconds_usd_per_song": 0.04, "pro_full_song_usd_per_song": 0.08 }
+    },
+    {
+      "ids": ["gemini-embedding-2"],
+      "status": "current",
+      "modes": {
+        "standard": {
+          "text_input": 0.2,
+          "image_input": 0.45,
+          "image_usd_each": 0.00012,
+          "audio_input": 6.5,
+          "audio_usd_per_second": 0.00016,
+          "video_input": 12,
+          "video_usd_per_frame": 0.00079
+        },
+        "batch": {
+          "text_input": 0.1,
+          "image_input": 0.225,
+          "image_usd_each": 0.00006,
+          "audio_input": 3.25,
+          "audio_usd_per_second": 0.00008,
+          "video_input": 6,
+          "video_usd_per_frame": 0.000395
+        }
+      }
+    },
+    {
+      "ids": ["gemini-embedding-001"],
+      "status": "current",
+      "modes": { "standard": { "input": 0.15 }, "batch": { "input": 0.075 } }
+    },
+    {
+      "ids": ["gemini-robotics-er-2-preview"],
+      "status": "preview",
+      "modes": {
+        "standard": {
+          "input_all_modalities": 2,
+          "output_including_thinking": 10,
+          "cache_read": 0.2,
+          "cache_storage": 1
+        },
+        "batch": {
+          "input_all_modalities": 1,
+          "output_including_thinking": 5,
+          "cache_read": 0.1,
+          "cache_storage": 1
+        }
+      },
+      "grounding_profile": "gemini_3"
+    },
+    {
+      "ids": ["gemini-robotics-er-2-streaming-preview"],
+      "status": "preview",
+      "modes": { "standard": { "input_all_modalities": 2, "output": 10 } },
+      "grounding_profile": "gemini_3"
+    },
+    {
+      "ids": ["gemini-robotics-er-1.6-preview"],
+      "status": "preview",
+      "modes": {
+        "standard": {
+          "input_text_image_video": 1,
+          "input_audio": 2,
+          "output_including_thinking": 5
+        },
+        "batch": {
+          "input_text_image_video": 0.5,
+          "input_audio": 1,
+          "output_including_thinking": 2.5
+        }
+      },
+      "grounding_profile": "gemini_3"
+    },
+    {
+      "ids": ["gemini-2.5-computer-use-preview-10-2025"],
+      "status": "preview",
+      "modes": {
+        "standard": {
+          "input_at_or_under_200k": 1.25,
+          "input_over_200k": 2.5,
+          "output_at_or_under_200k": 10,
+          "output_over_200k": 15
+        }
+      }
+    },
+    {
+      "ids": ["gemma-4"],
+      "status": "free_tier_only",
+      "modes": { "standard": { "input": 0, "output": 0, "cache_read": 0 } }
+    }
+  ],
+  "tool_charges": [
+    {
+      "id": "google_search_gemini_3",
+      "free_requests_per_month": 5000,
+      "price_after_free": 14,
+      "unit": "usd_per_1000_requests",
+      "notes": "A submitted request can issue multiple searches."
+    },
+    {
+      "id": "google_search_gemini_2_5",
+      "free_requests_per_day": 1500,
+      "price_after_free": 35,
+      "unit": "usd_per_1000_grounded_prompts"
+    },
+    {
+      "id": "google_maps",
+      "free_requests_per_day": 1500,
+      "price_after_free": 25,
+      "unit": "usd_per_1000_grounded_prompts"
+    },
+    {
+      "id": "code_execution",
+      "price": "selected_model_token_rates",
+      "notes": "Generated code and results are output tokens; reused results are input tokens."
+    },
+    { "id": "url_context", "price": "selected_model_input_token_rate" },
+    { "id": "computer_use", "price": "selected_model_token_rates" },
+    {
+      "id": "file_search_embedding",
+      "amount": 0.15,
+      "unit": "usd_per_mtok",
+      "notes": "Retrieved document tokens use the selected model rate."
+    },
+    { "id": "custom_tools_endpoint", "price": "gemini_3_1_pro_preview_rates" }
+  ],
+  "agent_rules": [
+    "Deep Research and managed-agent inference includes intermediate input and reasoning tokens at standard list rates.",
+    "Deep Research and managed-agent tools use their normal tool prices.",
+    "Managed-agent environment compute is free during the preview period."
+  ],
+  "billing_notes": [
+    "Batch is advertised as a 50% cost reduction; profile rows record published values.",
+    "Paid-tier context caching and storage availability depend on the model and processing mode.",
+    "Document/PDF tokens are billed at the image token rate and appear as DOCUMENT prompt-token details.",
+    "Google AI Studio usage is free in available regions."
+  ]
+}

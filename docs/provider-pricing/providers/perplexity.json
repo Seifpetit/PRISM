@@ -1,0 +1,15 @@
+{
+  "catalog_schema": "provider-pricing-v1",
+  "provider": "perplexity",
+  "currency": "USD",
+  "retrieved_at": "2026-08-28T00:00:00+00:00",
+  "source_urls": ["https://docs.perplexity.ai/docs/getting-started/pricing"],
+  "units": { "usd_per_mtok": "USD per 1,000,000 tokens", "usd_per_1000_requests": "USD per 1,000 requests" },
+  "cost_formula": "Use provider-reported usage.cost.total_cost whenever present. Otherwise, for Sonar, Sonar Pro, and Sonar Reasoning Pro: ((input_tokens * input_rate) + (output_tokens * output_rate)) / 1000000 + request_fee(search_context_size) / 1000. Deep Research has separately billed dimensions and remains partial without provider-reported cost.",
+  "models": [
+    { "id": "sonar", "name": "Sonar", "status": "current", "rates": { "input": 1, "output": 1, "requestPerThousand": { "low": 5, "medium": 8, "high": 12 } } },
+    { "id": "sonar-pro", "name": "Sonar Pro", "status": "current", "rates": { "input": 3, "output": 15, "requestPerThousand": { "low": 6, "medium": 10, "high": 14 } } },
+    { "id": "sonar-reasoning-pro", "name": "Sonar Reasoning Pro", "status": "current", "rates": { "input": 2, "output": 8, "requestPerThousand": { "low": 6, "medium": 10, "high": 14 } } },
+    { "id": "sonar-deep-research", "name": "Sonar Deep Research", "status": "current", "rates": { "input": 2, "output": 8, "citation": 2, "searchQueryPerThousand": 5, "reasoning": 3, "requestPerThousand": {} } }
+  ]
+}

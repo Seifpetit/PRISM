@@ -1,0 +1,208 @@
+{
+  "providers": {
+    "openai": {
+      "modelIdPrefixes": ["gpt-", "o3", "o4", "chat-latest"],
+      "unsupportedModelIdPrefixes": [
+        "gpt-3.5",
+        "gpt-4-",
+        "gpt-4-turbo",
+        "o3-deep-research",
+        "o4-mini-deep-research"
+      ],
+      "structuredOutputModelIdPrefixes": [
+        "gpt-5",
+        "gpt-4.1",
+        "gpt-4o",
+        "o3",
+        "o4-mini",
+        "chat-latest"
+      ],
+      "modelInputOverrides": {
+        "o3-mini": { "images": false, "documents": false, "structuredOutputs": true },
+        "gpt-3.5-turbo": { "images": false, "documents": false, "structuredOutputs": false }
+      },
+      "imageMimeTypes": ["image/jpeg", "image/png", "image/gif", "image/webp"],
+      "documentMimeTypes": [
+        "application/pdf",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+        "application/vnd.ms-powerpoint",
+        "text/plain",
+        "text/markdown",
+        "text/csv",
+        "application/json"
+      ]
+    },
+    "anthropic": {
+      "modelIdPrefixes": ["claude-"],
+      "unsupportedModelIdPrefixes": [],
+      "structuredOutputModelIdPrefixes": ["claude-"],
+      "modelInputOverrides": {},
+      "imageMimeTypes": ["image/jpeg", "image/png", "image/gif", "image/webp"],
+      "documentMimeTypes": ["application/pdf"]
+    },
+    "deepseek": {
+      "modelIdPrefixes": ["deepseek-v4-"],
+      "unsupportedModelIdPrefixes": [],
+      "structuredOutputModelIdPrefixes": ["deepseek-v4-"],
+      "modelInputOverrides": {
+        "deepseek-v4-flash": { "images": false, "documents": false, "structuredOutputs": true },
+        "deepseek-v4-pro": { "images": false, "documents": false, "structuredOutputs": true }
+      },
+      "imageMimeTypes": [],
+      "documentMimeTypes": []
+    },
+    "gemini": {
+      "modelIdPrefixes": ["gemini-"],
+      "unsupportedModelIdPrefixes": ["gemini-2.5-"],
+      "structuredOutputModelIdPrefixes": ["gemini-"],
+      "modelInputOverrides": {},
+      "imageMimeTypes": ["image/jpeg", "image/png", "image/gif", "image/webp"],
+      "documentMimeTypes": [
+        "application/pdf",
+        "text/plain",
+        "text/markdown",
+        "text/csv",
+        "application/json"
+      ]
+    },
+    "perplexity": {
+      "modelIdPrefixes": [],
+      "unsupportedModelIdPrefixes": [],
+      "structuredOutputModelIdPrefixes": [],
+      "modelInputOverrides": {},
+      "imageMimeTypes": [],
+      "documentMimeTypes": []
+    }
+  },
+  "formatFallbacks": {
+    "image": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-luna",
+        "standardShortContextUsdPerMTok": { "input": 0.2, "output": 1.2 }
+      },
+      {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash",
+        "standardShortContextUsdPerMTok": { "input": 1.5, "output": 9 }
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "standardShortContextUsdPerMTok": { "input": 1, "output": 5 }
+      }
+    ],
+    "video": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-luna",
+        "standardShortContextUsdPerMTok": { "input": 0.2, "output": 1.2 }
+      },
+      {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash",
+        "standardShortContextUsdPerMTok": { "input": 1.5, "output": 9 }
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "standardShortContextUsdPerMTok": { "input": 1, "output": 5 }
+      }
+    ],
+    "application/pdf": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-luna",
+        "standardShortContextUsdPerMTok": { "input": 0.2, "output": 1.2 }
+      },
+      {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash",
+        "standardShortContextUsdPerMTok": { "input": 1.5, "output": 9 }
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "standardShortContextUsdPerMTok": { "input": 1, "output": 5 }
+      }
+    ],
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-luna",
+        "standardShortContextUsdPerMTok": { "input": 0.2, "output": 1.2 }
+      }
+    ],
+    "application/msword": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-luna",
+        "standardShortContextUsdPerMTok": { "input": 0.2, "output": 1.2 }
+      }
+    ],
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-luna",
+        "standardShortContextUsdPerMTok": { "input": 0.2, "output": 1.2 }
+      }
+    ],
+    "application/vnd.ms-powerpoint": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-luna",
+        "standardShortContextUsdPerMTok": { "input": 0.2, "output": 1.2 }
+      }
+    ],
+    "text/plain": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-luna",
+        "standardShortContextUsdPerMTok": { "input": 0.2, "output": 1.2 }
+      },
+      {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash",
+        "standardShortContextUsdPerMTok": { "input": 1.5, "output": 9 }
+      }
+    ],
+    "text/markdown": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-luna",
+        "standardShortContextUsdPerMTok": { "input": 0.2, "output": 1.2 }
+      },
+      {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash",
+        "standardShortContextUsdPerMTok": { "input": 1.5, "output": 9 }
+      }
+    ],
+    "text/csv": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-luna",
+        "standardShortContextUsdPerMTok": { "input": 0.2, "output": 1.2 }
+      },
+      {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash",
+        "standardShortContextUsdPerMTok": { "input": 1.5, "output": 9 }
+      }
+    ],
+    "application/json": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-luna",
+        "standardShortContextUsdPerMTok": { "input": 0.2, "output": 1.2 }
+      },
+      {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash",
+        "standardShortContextUsdPerMTok": { "input": 1.5, "output": 9 }
+      }
+    ]
+  }
+}

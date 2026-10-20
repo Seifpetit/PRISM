@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0 H0 V30" fill="none" stroke="#0f0f10" stroke-opacity=".06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#f2f2ee"/>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <g transform="translate(80 84) scale(3)" fill="none">
+    <path d="M1.5 18.5 L9 1.5 L16.5 18.5 Z" stroke="#0f0f10" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M13.2 6 H26.5" stroke="#4f6bff" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M14.8 9.5 H26.5" stroke="#8b5cf6" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M16.4 13 H26.5" stroke="#f0508c" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M18 16.5 H26.5" stroke="#f5a524" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <text x="180" y="136" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="44" fill="#0f0f10" letter-spacing="-1">prism</text>
+  <text x="76" y="360" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="132" fill="#0f0f10" letter-spacing="-6">Chaos in.</text>
+  <text x="76" y="490" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="132" fill="#0f0f10" letter-spacing="-6">Clarity out.</text>
+  <rect x="80" y="530" width="120" height="8" rx="4" fill="#4f6bff"/>
+  <rect x="210" y="530" width="120" height="8" rx="4" fill="#8b5cf6"/>
+  <rect x="340" y="530" width="120" height="8" rx="4" fill="#f0508c"/>
+  <rect x="470" y="530" width="120" height="8" rx="4" fill="#f5a524"/>
+  <text x="1120" y="545" text-anchor="end" font-family="Consolas, monospace" font-size="20" fill="#55555a" letter-spacing="3">PLAN · MAKE · SHIP · LEARN</text>
+</svg>

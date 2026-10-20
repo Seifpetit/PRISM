@@ -1,0 +1,97 @@
+:root {
+  color-scheme: light;
+  --bg-app: #eceef2;
+  --bg-canvas: #eceef2;
+  --bg-panel: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-input: #fafbfc;
+  --text-primary: #15171a;
+  --text-secondary: #454b54;
+  --text-muted: #666b73;
+  --border-subtle: #eceef1;
+  --border-default: #dde0e4;
+  --border-strong: #b9bec6;
+  --lineage-default: #b9bec5;
+  --lineage-selected: #2864dc;
+  --status-success: #286443;
+  --status-warning: #7d622a;
+  --status-error: #963f3f;
+  --surface-floating-background: rgb(255 255 255 / 0.9);
+  --surface-floating-border: #dfe2e6;
+  --surface-floating-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --surface-radius-md: 0.375rem;
+  --floating-toolbar-inset: 0.75rem;
+  --floating-toolbar-max-width: 920px;
+  --canvas: var(--bg-canvas);
+  --surface: var(--bg-panel);
+  --ink: var(--text-primary);
+  --muted: var(--text-muted);
+  --lineage: #2864dc;
+  --lineage-blue: #2864dc;
+  --prism-blue: #1769ff;
+  --prism-violet: #7a4cff;
+  --prism-pink: #f33dbb;
+  --prism-amber: #ffb43a;
+  /* The person's own accent, chosen in Personal settings (lib/control-room-appearance.ts). Defaults here to that
+     picker's own default ("Ember") so nothing flashes an unstyled color before the app syncs the real choice onto
+     the document root (components/control-accent-sync.tsx) — this is what the app calls its "third color" for any
+     accent that isn't a big Prism generation moment and isn't already a defined light/dark theme color. */
+  --control-accent: #e8590c;
+  --control-accent-ink: #15171a;
+  --lime: #b8f06a;
+  /* One colour per ingredient type. --type-* tints borders and surfaces, --type-*-band is the solid card header,
+     --type-*-on is the text on that header. */
+  --type-angle: #1769ff;
+  --type-angle-band: #1f5ff0;
+  --type-angle-on: #ffffff;
+  --type-persona: #7a4cff;
+  --type-persona-band: #6d3fef;
+  --type-persona-on: #ffffff;
+  --type-offer: #e89400;
+  --type-offer-band: #f5a30a;
+  --type-offer-on: #2b1a00;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-app: #0b0d11;
+  --bg-canvas: #0e1116;
+  --bg-panel: #13171d;
+  --bg-elevated: #171c23;
+  --bg-input: #1b2129;
+  --text-primary: #f4f7fb;
+  --text-secondary: #b6bec9;
+  --text-muted: #9da7b4;
+  --border-subtle: #252c35;
+  --border-default: #323b47;
+  --border-strong: #465264;
+  --lineage-default: #394452;
+  --lineage-selected: #5b8cff;
+  --status-success: #52d18b;
+  --status-warning: #e6b35a;
+  --status-error: #ff6b6b;
+  --surface-floating-background: color-mix(
+    in srgb,
+    var(--bg-elevated) 90%,
+    transparent
+  );
+  --surface-floating-border: var(--border-default);
+  --surface-floating-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.24);
+  --canvas: var(--bg-canvas);
+  --surface: var(--bg-panel);
+  --ink: var(--text-primary);
+  --muted: var(--text-muted);
+  --lineage: var(--lineage-selected);
+  --lineage-blue: var(--lineage-selected);
+  --type-angle: #6b9bff;
+  --type-angle-band: #2f6bff;
+  --type-persona: #a184ff;
+  --type-persona-band: #7b4dff;
+  --type-offer: #ffb43a;
+}
+
+@property --prism-contour-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}

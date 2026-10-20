@@ -1,0 +1,181 @@
+/* Existing utility classes remain the visual vocabulary of the product. These
+   tokenized compatibility rules make their light surfaces theme-aware without
+   changing component structure or graph behavior. */
+html[data-theme="dark"] [class*="text-[#"] {
+  color: var(--text-primary) !important;
+}
+html[data-theme="dark"] [class*="border-[#"] {
+  border-color: var(--border-default) !important;
+}
+html[data-theme="dark"] .text-red-800,
+html[data-theme="dark"] .text-red-700 {
+  color: var(--status-error) !important;
+}
+/* `bg-ink` is the light-mode inverse token; in dark mode it becomes light.
+   Keep ordinary inverse controls readable while PrismAction retains its own
+   dark interior via its pseudo-element. */
+html[data-theme="dark"] .bg-ink:not(.prism-action).text-white,
+html[data-theme="dark"] [class*="bg-ink/"].text-white {
+  color: var(--bg-app) !important;
+}
+html[data-theme="dark"] .bg-white,
+html[data-theme="dark"] .bg-white\/90,
+html[data-theme="dark"] .bg-white\/80,
+html[data-theme="dark"] .bg-white\/95,
+html[data-theme="dark"] .bg-white\/96,
+html[data-theme="dark"] .bg-white\/97,
+html[data-theme="dark"] .bg-white\/98,
+html[data-theme="dark"] .bg-white\/985 {
+  background-color: var(--bg-panel) !important;
+}
+html[data-theme="dark"] .bg-canvas\/95 {
+  background-color: color-mix(in srgb, var(--bg-canvas) 95%, transparent) !important;
+}
+html[data-theme="dark"] .text-white {
+  color: var(--text-primary) !important;
+}
+html[data-theme="dark"] [class*="border-[#DDE0E4]"],
+html[data-theme="dark"] [class*="border-[#DFE2E6]"],
+html[data-theme="dark"] [class*="border-[#E0E3E7]"],
+html[data-theme="dark"] [class*="border-[#E1E4E8]"],
+html[data-theme="dark"] [class*="border-[#E2E5E9]"],
+html[data-theme="dark"] [class*="border-[#E3E6E9]"],
+html[data-theme="dark"] [class*="border-[#E4E6E9]"],
+html[data-theme="dark"] [class*="border-[#E7E9EC]"],
+html[data-theme="dark"] [class*="border-[#ECEEF1]"],
+html[data-theme="dark"] [class*="border-[#DEE2E6]"] {
+  border-color: var(--border-default) !important;
+}
+html[data-theme="dark"] [class*="divide-[#ECEEF1]"],
+html[data-theme="dark"] [class*="divide-[#E5E7EB]"],
+html[data-theme="dark"] [class*="divide-[#E0E3E7]"] > * + * {
+  border-color: var(--border-subtle) !important;
+}
+html[data-theme="dark"] [class*="bg-[#FAFBFC]"],
+html[data-theme="dark"] [class*="bg-[#FAFAFB]"],
+html[data-theme="dark"] [class*="bg-[#F7F8FA]"],
+html[data-theme="dark"] [class*="bg-[#F9FAFB]"] {
+  background-color: var(--bg-input) !important;
+}
+html[data-theme="dark"] [class*="bg-[#EEF0F3]"],
+html[data-theme="dark"] [class*="bg-[#EEF1F5]"],
+html[data-theme="dark"] [class*="bg-[#F6F7F9]"] {
+  background-color: var(--bg-elevated) !important;
+}
+html[data-theme="dark"] [class*="bg-[#F5F8FF]"],
+html[data-theme="dark"] [class*="bg-[#EAF1FF]"],
+html[data-theme="dark"] .bg-blue-50 {
+  background-color: color-mix(in srgb, var(--lineage-selected) 14%, var(--bg-input)) !important;
+}
+html[data-theme="dark"] .bg-red-50,
+html[data-theme="dark"] [class*="bg-[#FFF7F7]"],
+html[data-theme="dark"] [class*="bg-[#FFF8F8]"] {
+  background-color: color-mix(in srgb, var(--status-error) 12%, var(--bg-input)) !important;
+}
+html[data-theme="dark"] [class*="bg-[#FFFBF1]"] {
+  background-color: color-mix(in srgb, var(--status-warning) 12%, var(--bg-input)) !important;
+}
+html[data-theme="dark"] [class*="border-red-200"],
+html[data-theme="dark"] [class*="border-[#E8CACA]"],
+html[data-theme="dark"] [class*="border-[#F4C7C3]"] {
+  border-color: color-mix(in srgb, var(--status-error) 52%, var(--border-default)) !important;
+}
+html[data-theme="dark"] [class*="text-red-700"],
+html[data-theme="dark"] [class*="text-[#963F3F]"],
+html[data-theme="dark"] [class*="text-[#B42318]"],
+html[data-theme="dark"] [class*="text-[#7D3030]"] {
+  color: var(--status-error) !important;
+}
+html[data-theme="dark"] [class*="text-[#7D622A]"],
+html[data-theme="dark"] [class*="text-[#6B6047]"],
+html[data-theme="dark"] [class*="text-[#6B5A34]"] {
+  color: var(--status-warning) !important;
+}
+/* Operation status badges: the green (succeeded) and blue (running) tints, matching the error and warning ones above.
+   Without these the pale light-mode fill stayed while the text was flipped to light, leaving the badge unreadable. */
+html[data-theme="dark"] [class*="bg-[#F3FAF5]"] {
+  background-color: color-mix(in srgb, var(--status-success) 12%, var(--bg-input)) !important;
+}
+html[data-theme="dark"] [class*="border-[#CFE4D7]"] {
+  border-color: color-mix(in srgb, var(--status-success) 45%, var(--border-default)) !important;
+}
+html[data-theme="dark"] [class*="text-[#286443]"] {
+  color: var(--status-success) !important;
+}
+html[data-theme="dark"] [class*="bg-[#F3F7FF]"] {
+  background-color: color-mix(in srgb, var(--lineage-selected) 14%, var(--bg-input)) !important;
+}
+html[data-theme="dark"] [class*="border-[#CAD8F2]"] {
+  border-color: color-mix(in srgb, var(--lineage-selected) 50%, var(--border-default)) !important;
+}
+html[data-theme="dark"] [class*="text-[#345FAD]"] {
+  color: var(--lineage-selected) !important;
+}
+html[data-theme="dark"] [class*="text-[#555B64]"],
+html[data-theme="dark"] [class*="text-[#343A43]"],
+html[data-theme="dark"] [class*="text-[#3E4650]"],
+html[data-theme="dark"] [class*="text-[#4F5661]"] {
+  color: var(--text-secondary) !important;
+}
+html[data-theme="dark"] .react-flow__controls-button {
+  border-color: var(--border-default) !important;
+  background: var(--bg-elevated) !important;
+  color: var(--text-primary);
+}
+html[data-theme="dark"] .react-flow__controls-button:hover {
+  background: var(--bg-input) !important;
+}
+html[data-theme="dark"] .react-flow__node .bg-white {
+  background-color: #151a20 !important;
+  border-color: var(--border-default) !important;
+}
+html[data-theme="dark"] .strategy-inspector {
+  border-left-color: var(--border-subtle) !important;
+}
+html[data-theme="dark"] .lineage-grammar .text-muted\/55 {
+  color: var(--text-muted) !important;
+  opacity: 0.82;
+}
+
+html[data-theme="dark"] .lineage-grammar [class*="text-[#B8BDC5]"] {
+  color: var(--text-secondary) !important;
+}
+html[data-theme="dark"] .react-flow__minimap {
+  background: var(--bg-panel);
+}
+html[data-theme="dark"] .prism-action::after {
+  background: var(--bg-elevated);
+}
+html[data-theme="dark"] input:not([type="checkbox"]):not([type="radio"]),
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+  color: var(--text-primary);
+}
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.9;
+}
+html[data-theme="dark"] .generation-satellite-trigger {
+  border-color: var(--border-default);
+  background: color-mix(in srgb, var(--bg-elevated) 96%, transparent);
+  color: var(--text-secondary);
+  box-shadow: 0 5px 15px rgb(0 0 0 / 0.22);
+}
+html[data-theme="dark"] .generation-satellite-model-popover {
+  border-color: var(--border-default);
+  background: var(--bg-panel);
+  box-shadow: 0 14px 34px rgb(0 0 0 / 0.28);
+}
+html[data-theme="dark"] .generation-satellite-model-close {
+  border-color: var(--border-default);
+  background: var(--bg-elevated);
+}
+html[data-theme="dark"] .focused-strategy-node-surface {
+  border-color: var(--border-default);
+  background: var(--bg-elevated);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 0.35);
+}
+html[data-theme="dark"] .prism-node-contour.is-selected {
+  filter: drop-shadow(0 0 3px rgb(91 140 255 / 0.42));
+}

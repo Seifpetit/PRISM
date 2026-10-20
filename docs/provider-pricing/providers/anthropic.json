@@ -1,0 +1,259 @@
+{
+  "catalog_schema": "provider-pricing-v1",
+  "provider": "anthropic",
+  "currency": "USD",
+  "retrieved_at": "2026-08-11T21:27:01+02:00",
+  "source_urls": ["https://platform.claude.com/docs/en/about-claude/pricing"],
+  "units": {
+    "usd_per_mtok": "USD per 1,000,000 tokens",
+    "usd_per_session_hour": "USD per running session-hour",
+    "usd_per_container_hour": "USD per container-hour"
+  },
+  "cost_formula": "((uncached_input_tokens * input_rate) + (cache_write_5m_tokens * cache_write_5m_rate) + (cache_write_1h_tokens * cache_write_1h_rate) + (cache_read_tokens * cache_read_rate) + (output_tokens * output_rate)) / 1000000 + tool_charges + runtime_charges; apply the selected mode and any applicable pricing multiplier",
+  "models": [
+    {
+      "name": "Claude Fable 5",
+      "status": "current",
+      "input": 10,
+      "cache_write_5m": 12.5,
+      "cache_write_1h": 20,
+      "cache_read": 1,
+      "output": 50,
+      "batch_input": 5,
+      "batch_output": 25
+    },
+    {
+      "name": "Claude Mythos 5",
+      "status": "limited_availability",
+      "input": 10,
+      "cache_write_5m": 12.5,
+      "cache_write_1h": 20,
+      "cache_read": 1,
+      "output": 50,
+      "batch_input": 5,
+      "batch_output": 25
+    },
+    {
+      "name": "Claude Opus 5",
+      "status": "current",
+      "input": 5,
+      "cache_write_5m": 6.25,
+      "cache_write_1h": 10,
+      "cache_read": 0.5,
+      "output": 25,
+      "batch_input": 2.5,
+      "batch_output": 12.5
+    },
+    {
+      "name": "Claude Opus 4.8",
+      "status": "current",
+      "input": 5,
+      "cache_write_5m": 6.25,
+      "cache_write_1h": 10,
+      "cache_read": 0.5,
+      "output": 25,
+      "batch_input": 2.5,
+      "batch_output": 12.5
+    },
+    {
+      "name": "Claude Opus 4.7",
+      "status": "current",
+      "input": 5,
+      "cache_write_5m": 6.25,
+      "cache_write_1h": 10,
+      "cache_read": 0.5,
+      "output": 25,
+      "batch_input": 2.5,
+      "batch_output": 12.5
+    },
+    {
+      "name": "Claude Opus 4.6",
+      "status": "current",
+      "input": 5,
+      "cache_write_5m": 6.25,
+      "cache_write_1h": 10,
+      "cache_read": 0.5,
+      "output": 25,
+      "batch_input": 2.5,
+      "batch_output": 12.5
+    },
+    {
+      "name": "Claude Opus 4.5",
+      "status": "current",
+      "input": 5,
+      "cache_write_5m": 6.25,
+      "cache_write_1h": 10,
+      "cache_read": 0.5,
+      "output": 25,
+      "batch_input": 2.5,
+      "batch_output": 12.5
+    },
+    {
+      "name": "Claude Opus 4.1",
+      "status": "retired_first_party",
+      "input": 15,
+      "cache_write_5m": 18.75,
+      "cache_write_1h": 30,
+      "cache_read": 1.5,
+      "output": 75,
+      "batch_input": 7.5,
+      "batch_output": 37.5
+    },
+    {
+      "name": "Claude Opus 4",
+      "status": "retired_first_party",
+      "input": 15,
+      "cache_write_5m": 18.75,
+      "cache_write_1h": 30,
+      "cache_read": 1.5,
+      "output": 75,
+      "batch_input": 7.5,
+      "batch_output": 37.5
+    },
+    {
+      "name": "Claude Sonnet 5",
+      "status": "current",
+      "input": 2,
+      "cache_write_5m": 2.5,
+      "cache_write_1h": 4,
+      "cache_read": 0.2,
+      "output": 10,
+      "batch_input": 1,
+      "batch_output": 5
+    },
+    {
+      "name": "Claude Sonnet 4.6",
+      "status": "current",
+      "input": 3,
+      "cache_write_5m": 3.75,
+      "cache_write_1h": 6,
+      "cache_read": 0.3,
+      "output": 15,
+      "batch_input": 1.5,
+      "batch_output": 7.5
+    },
+    {
+      "name": "Claude Sonnet 4.5",
+      "status": "current",
+      "input": 3,
+      "cache_write_5m": 3.75,
+      "cache_write_1h": 6,
+      "cache_read": 0.3,
+      "output": 15,
+      "batch_input": 1.5,
+      "batch_output": 7.5
+    },
+    {
+      "name": "Claude Sonnet 4",
+      "status": "retired_first_party",
+      "input": 3,
+      "cache_write_5m": 3.75,
+      "cache_write_1h": 6,
+      "cache_read": 0.3,
+      "output": 15,
+      "batch_input": 1.5,
+      "batch_output": 7.5
+    },
+    {
+      "name": "Claude Haiku 4.5",
+      "status": "current",
+      "input": 1,
+      "cache_write_5m": 1.25,
+      "cache_write_1h": 2,
+      "cache_read": 0.1,
+      "output": 5,
+      "batch_input": 0.5,
+      "batch_output": 2.5
+    },
+    {
+      "name": "Claude Haiku 3.5",
+      "status": "retired_first_party",
+      "input": 0.8,
+      "cache_write_5m": 1,
+      "cache_write_1h": 1.6,
+      "cache_read": 0.08,
+      "output": 4,
+      "batch_input": 0.4,
+      "batch_output": 2
+    }
+  ],
+  "charges": [
+    {
+      "id": "web_search",
+      "unit": "usd_per_1000_searches",
+      "amount": 10,
+      "notes": "Search-generated content also incurs normal token charges."
+    },
+    {
+      "id": "code_execution",
+      "unit": "usd_per_container_hour",
+      "amount": 0.05,
+      "free_hours_per_month": 1550,
+      "minimum_minutes": 5,
+      "notes": "No execution surcharge when paired with web search or web fetch."
+    },
+    {
+      "id": "managed_agent_runtime",
+      "unit": "usd_per_session_hour",
+      "amount": 0.08,
+      "notes": "Accrues only while session status is running."
+    }
+  ],
+  "modifiers": [
+    {
+      "id": "batch",
+      "multiplier": 0.5,
+      "applies_to": ["input", "output"],
+      "notes": "Batch API discount."
+    },
+    { "id": "cache_write_5m", "multiplier_of_input": 1.25 },
+    { "id": "cache_write_1h", "multiplier_of_input": 2 },
+    { "id": "cache_read", "multiplier_of_input": 0.1 },
+    {
+      "id": "us_data_residency",
+      "multiplier": 1.1,
+      "applies_to": ["all_token_categories"],
+      "notes": "Claude 4.6 and later."
+    },
+    {
+      "id": "fast_mode",
+      "models": ["Claude Opus 5", "Claude Opus 4.8"],
+      "input": 10,
+      "output": 50,
+      "notes": "Not available with Batch API; cache and data-residency modifiers stack."
+    }
+  ],
+  "token_overhead": [
+    {
+      "feature": "bash_tool_definition",
+      "models": "Opus 5, Opus 4.8, Opus 4.7",
+      "input_tokens": 325
+    },
+    {
+      "feature": "bash_tool_definition",
+      "models": "Opus 4.6, Sonnet 4.6, and earlier",
+      "input_tokens": 244
+    },
+    { "feature": "text_editor_20250429", "models": "Claude 4.x", "input_tokens": 700 },
+    {
+      "feature": "computer_use_system_prompt",
+      "models": "Claude 4.x",
+      "input_tokens_range": [466, 499]
+    },
+    { "feature": "computer_use_tool_definition", "models": "Claude 4.x", "input_tokens": 735 }
+  ],
+  "marketplace_rules": [
+    {
+      "platform": "Claude Platform on AWS",
+      "billing_unit": "CCU",
+      "usd_per_ccu": 0.01,
+      "notes": "Usage is rated at standard per-model/per-feature rates, discounted if applicable, then converted to CCUs."
+    },
+    {
+      "platform": "Claude in Microsoft Foundry",
+      "billing_unit": "CCU",
+      "usd_per_ccu": 0.01,
+      "notes": "US Data Zone Standard has the same 1.1x multiplier as US inference geography."
+    }
+  ]
+}

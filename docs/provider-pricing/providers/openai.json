@@ -1,0 +1,360 @@
+{
+  "catalog_schema": "provider-pricing-v1",
+  "provider": "openai",
+  "currency": "USD",
+  "retrieved_at": "2026-08-11T21:27:01+02:00",
+  "source_urls": [
+    "https://developers.openai.com/api/docs/pricing",
+    "https://developers.openai.com/api/docs/models"
+  ],
+  "units": {
+    "usd_per_mtok": "USD per 1,000,000 tokens",
+    "usd_per_1000_calls": "USD per 1,000 calls",
+    "usd_per_gb_day": "USD per binary GB per day",
+    "usd_per_second": "USD per generated second"
+  },
+  "cost_formula": "((uncached_input_tokens * input_rate) + (cached_input_tokens * cached_input_rate) + (cache_write_tokens * cache_write_rate) + (output_tokens * output_rate)) / 1000000 + request_charges + storage_charges + generated_media_charges; apply the selected service mode and any applicable regional multiplier",
+  "service_modes": [
+    { "id": "standard", "description": "Default processing." },
+    { "id": "batch", "description": "Asynchronous Batch API processing." },
+    { "id": "flex", "description": "Flexible processing tier." },
+    {
+      "id": "fast",
+      "description": "Fast mode; the pricing page states this was formerly Priority processing."
+    }
+  ],
+  "models": [
+    {
+      "id": "gpt-5.6-sol",
+      "status": "current",
+      "kind": "text_reasoning",
+      "rates": {
+        "standard": {
+          "short_context": { "input": 5, "cached_input": 0.5, "cache_write": 6.25, "output": 30 },
+          "long_context": { "input": 10, "cached_input": 1, "cache_write": 12.5, "output": 45 }
+        },
+        "batch": {
+          "short_context": {
+            "input": 2.5,
+            "cached_input": 0.25,
+            "cache_write": 3.125,
+            "output": 15
+          },
+          "long_context": { "input": 5, "cached_input": 0.5, "cache_write": 6.25, "output": 22.5 }
+        },
+        "flex": {
+          "short_context": {
+            "input": 2.5,
+            "cached_input": 0.25,
+            "cache_write": 3.125,
+            "output": 15
+          },
+          "long_context": { "input": 5, "cached_input": 0.5, "cache_write": 6.25, "output": 22.5 }
+        },
+        "fast": {
+          "short_context": { "input": 10, "cached_input": 1, "cache_write": 12.5, "output": 60 },
+          "long_context": { "input": 20, "cached_input": 2, "cache_write": 25, "output": 90 }
+        }
+      }
+    },
+    {
+      "id": "gpt-5.6-terra",
+      "status": "current",
+      "kind": "text_reasoning",
+      "rates": {
+        "standard": {
+          "short_context": { "input": 2, "cached_input": 0.2, "cache_write": 2.5, "output": 12 },
+          "long_context": { "input": 4, "cached_input": 0.4, "cache_write": 5, "output": 18 }
+        },
+        "batch": {
+          "short_context": { "input": 1, "cached_input": 0.1, "cache_write": 1.25, "output": 6 },
+          "long_context": { "input": 2, "cached_input": 0.2, "cache_write": 2.5, "output": 9 }
+        },
+        "flex": {
+          "short_context": { "input": 1, "cached_input": 0.1, "cache_write": 1.25, "output": 6 },
+          "long_context": { "input": 2, "cached_input": 0.2, "cache_write": 2.5, "output": 9 }
+        },
+        "fast": {
+          "short_context": { "input": 4, "cached_input": 0.4, "cache_write": 5, "output": 24 },
+          "long_context": { "input": 8, "cached_input": 0.8, "cache_write": 10, "output": 36 }
+        }
+      }
+    },
+    {
+      "id": "gpt-5.6-luna",
+      "status": "current",
+      "kind": "text_reasoning",
+      "rates": {
+        "standard": {
+          "short_context": {
+            "input": 0.2,
+            "cached_input": 0.02,
+            "cache_write": 0.25,
+            "output": 1.2
+          },
+          "long_context": { "input": 0.4, "cached_input": 0.04, "cache_write": 0.5, "output": 1.8 }
+        },
+        "batch": {
+          "short_context": {
+            "input": 0.1,
+            "cached_input": 0.01,
+            "cache_write": 0.125,
+            "output": 0.6
+          },
+          "long_context": { "input": 0.2, "cached_input": 0.02, "cache_write": 0.25, "output": 0.9 }
+        },
+        "flex": {
+          "short_context": {
+            "input": 0.1,
+            "cached_input": 0.01,
+            "cache_write": 0.125,
+            "output": 0.6
+          },
+          "long_context": { "input": 0.2, "cached_input": 0.02, "cache_write": 0.25, "output": 0.9 }
+        },
+        "fast": {
+          "short_context": {
+            "input": 0.4,
+            "cached_input": 0.04,
+            "cache_write": 0.5,
+            "output": 2.4
+          },
+          "long_context": { "input": 0.8, "cached_input": 0.08, "cache_write": 1, "output": 3.6 }
+        }
+      }
+    },
+    {
+      "id": "gpt-5.6-cyber",
+      "status": "current",
+      "kind": "cyber",
+      "rates": {
+        "standard": {
+          "short_context": {
+            "input": 12.5,
+            "cached_input": 1.25,
+            "cache_write": 15.625,
+            "output": 75
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt-realtime-2.1",
+      "status": "current",
+      "kind": "realtime",
+      "rates": {
+        "audio": { "input": 32, "cached_input": 0.4, "output": 64 },
+        "text": { "input": 4, "cached_input": 0.4, "output": 24 },
+        "image": { "input": 5, "cached_input": 0.5 }
+      }
+    },
+    {
+      "id": "gpt-realtime-2.1-mini",
+      "status": "current",
+      "kind": "realtime",
+      "rates": {
+        "audio": { "input": 10, "cached_input": 0.3, "output": 20 },
+        "text": { "input": 0.6, "cached_input": 0.06, "output": 2.4 },
+        "image": { "input": 0.8, "cached_input": 0.08 }
+      }
+    },
+    {
+      "id": "gpt-image-2",
+      "status": "current",
+      "kind": "image_generation",
+      "rates": {
+        "standard": {
+          "image_input": 8,
+          "image_cached_input": 2,
+          "image_output": 30,
+          "text_input": 5,
+          "text_cached_input": 1.25
+        },
+        "batch": {
+          "image_input": 4,
+          "image_cached_input": 1,
+          "image_output": 15,
+          "text_input": 2.5,
+          "text_cached_input": 0.625
+        }
+      }
+    },
+    {
+      "id": "sora-2",
+      "status": "deprecated",
+      "kind": "video_generation",
+      "rates": {
+        "standard": { "720p_usd_per_second": 0.1 },
+        "batch": { "720p_usd_per_second": 0.05 }
+      }
+    },
+    {
+      "id": "sora-2-pro",
+      "status": "deprecated",
+      "kind": "video_generation",
+      "rates": {
+        "standard": {
+          "720p_usd_per_second": 0.3,
+          "1024p_usd_per_second": 0.5,
+          "1080p_usd_per_second": 0.7
+        },
+        "batch": {
+          "720p_usd_per_second": 0.15,
+          "1024p_usd_per_second": 0.25,
+          "1080p_usd_per_second": 0.35
+        }
+      }
+    },
+    {
+      "id": "gpt-realtime-translate",
+      "status": "current",
+      "kind": "live_translation",
+      "estimated_usd_per_minute": 0.034
+    },
+    {
+      "id": "gpt-live-transcribe",
+      "status": "current",
+      "kind": "live_transcription",
+      "estimated_usd_per_minute": 0.017
+    },
+    {
+      "id": "gpt-realtime-whisper",
+      "status": "current",
+      "kind": "live_transcription",
+      "estimated_usd_per_minute": 0.017
+    },
+    {
+      "id": "gpt-transcribe",
+      "status": "current",
+      "kind": "transcription",
+      "estimated_usd_per_minute": 0.0045
+    },
+    {
+      "id": "gpt-4o-transcribe",
+      "status": "current",
+      "kind": "transcription",
+      "rates": { "input": 2.5, "output": 10 },
+      "estimated_usd_per_minute": 0.006
+    },
+    {
+      "id": "gpt-4o-mini-transcribe",
+      "status": "current",
+      "kind": "transcription",
+      "rates": { "input": 1.25, "output": 5 },
+      "estimated_usd_per_minute": 0.003
+    },
+    {
+      "id": "chat-latest",
+      "status": "current",
+      "kind": "chat",
+      "rates": { "standard": { "input": 5, "cached_input": 0.5, "output": 30 } }
+    },
+    {
+      "id": "gpt-5.3-codex",
+      "status": "current",
+      "kind": "codex",
+      "rates": {
+        "standard": { "input": 1.75, "cached_input": 0.175, "output": 14 },
+        "fast": { "input": 3.5, "cached_input": 0.35, "output": 28 }
+      }
+    },
+    {
+      "id": "o4-mini-2025-04-16",
+      "status": "existing_finetuning_only",
+      "kind": "finetuned_inference",
+      "rates": {
+        "standard": { "training_usd_per_hour": 100, "input": 4, "cached_input": 1, "output": 16 },
+        "standard_with_data_sharing": {
+          "training_usd_per_hour": 100,
+          "input": 2,
+          "cached_input": 0.5,
+          "output": 8
+        },
+        "batch": { "training_usd_per_hour": 100, "input": 2, "cached_input": 0.5, "output": 8 },
+        "batch_with_data_sharing": {
+          "training_usd_per_hour": 100,
+          "input": 1,
+          "cached_input": 0.25,
+          "output": 4
+        }
+      }
+    }
+  ],
+  "charges": [
+    {
+      "id": "web_search",
+      "unit": "usd_per_1000_calls",
+      "amount": 10,
+      "notes": "Search content tokens are also charged at model rates."
+    },
+    {
+      "id": "image_web_search",
+      "unit": "usd_per_1000_calls",
+      "amount": 10,
+      "notes": "Search content tokens are also charged at model rates."
+    },
+    {
+      "id": "web_search_preview_reasoning",
+      "unit": "usd_per_1000_calls",
+      "amount": 10,
+      "notes": "Search content tokens are billed at model rates."
+    },
+    {
+      "id": "web_search_preview_non_reasoning",
+      "unit": "usd_per_1000_calls",
+      "amount": 25,
+      "notes": "Search content tokens are free."
+    },
+    {
+      "id": "container_1gb",
+      "unit": "usd_per_20_minute_session",
+      "amount": 0.03,
+      "minimum_minutes": 5
+    },
+    {
+      "id": "container_4gb",
+      "unit": "usd_per_20_minute_session",
+      "amount": 0.12,
+      "minimum_minutes": 5
+    },
+    {
+      "id": "container_16gb",
+      "unit": "usd_per_20_minute_session",
+      "amount": 0.48,
+      "minimum_minutes": 5
+    },
+    {
+      "id": "container_64gb",
+      "unit": "usd_per_20_minute_session",
+      "amount": 1.92,
+      "minimum_minutes": 5
+    },
+    { "id": "file_search_storage", "unit": "usd_per_gb_day", "amount": 0.1, "free_gb": 1 },
+    { "id": "file_search_tool_call", "unit": "usd_per_1000_calls", "amount": 2.5 },
+    {
+      "id": "agent_kit_upload_storage",
+      "unit": "usd_per_gb_day",
+      "amount": 0.1,
+      "free_gb_per_account_per_month": 1
+    }
+  ],
+  "modifiers": [
+    {
+      "id": "regional_processing",
+      "multiplier": 1.1,
+      "notes": "Eligible models released on or after 2026-03-05."
+    },
+    {
+      "id": "gpt_4o_mini_and_gpt_4_1_mini_search_content",
+      "input_token_block_per_call": 8000,
+      "notes": "Applies to non-preview web search."
+    }
+  ],
+  "non_separate_api_charges": [
+    "Responses API",
+    "Chat Completions API",
+    "Realtime API",
+    "Batch API",
+    "Assistants API"
+  ]
+}
